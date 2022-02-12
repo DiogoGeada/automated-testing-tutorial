@@ -1,0 +1,17 @@
+.drink{
+    background-color: white;
+    border-radius: 0;
+    box-shadow: 0 0 2px 0 rgb(0 0 0 / 50%);
+    border-radius: 10px 10px 0 0;
+}
+
+.drink h3{
+    padding: 0 10px;
+    text-align: center;
+}
+
+.drink img{
+    max-width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
