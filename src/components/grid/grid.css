@@ -5,4 +5,5 @@
     padding: 15px;
     border-radius: 20px;
     box-sizing: content-box;
+    grid-gap: 15px;
 }

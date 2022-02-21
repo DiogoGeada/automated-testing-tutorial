@@ -1,12 +1,24 @@
+import { Component } from "react";
 import Cocktail from "../cocktail/cocktail";
 import './grid.css';
 
-export default function Grid() {
+export default class Grid extends Component {
 
-    return (
-        <div className="grid">
-            <Cocktail title="A great one" img="https://www.thecocktaildb.com/images/media/drink/bry4qh1582751040.jpg"></Cocktail>
-        </div>
-    );
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="grid">
+                {(this.props.drinks.length > 0) ? (
+                    this.props.drinks.map(drink => <Cocktail title={drink.strDrink} img={drink.strDrinkThumb}></Cocktail>)
+                ) : 
+                (
+                    <p>No cocktails could be found</p>
+                )}
+            </div>
+        );
+    }
 
 }
