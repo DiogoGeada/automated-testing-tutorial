@@ -4,7 +4,7 @@ export const ACTIONS = {
 }
 
 const actions = {
-    getDrinks: (drink = "") => ({type: ACTIONS.GET_DRINKS, drink: drink}),
+    getDrinks: (drink = undefined) => ({type: ACTIONS.GET_DRINKS, drink: drink}),
     saveDrinks: (drinks) => ({type: ACTIONS.SAVE_DRINKS, drinks: drinks})
 };
 
