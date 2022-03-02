@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import Favorite from "../../components/favorite/favorite";
 import withRouter from '../../hooks/withRouter';
 import actions from "../../redux/actions";
 import './recipe.css';
@@ -31,7 +30,6 @@ class Recipe extends Component {
                             </article>
                         </div>
                         <div className="content-area">
-                            <Favorite></Favorite>
                             <h2>{this.props.drink.strDrink}</h2>
                             <h3>Instructions</h3>
                             <p>{this.props.drink.strInstructions}</p>

@@ -11,7 +11,7 @@ export default class Favorite extends Component {
     render() {
         return (
             <div className="favorite">
-                <button onClick={this.toggleFavorite} className={this.state.favorite ? "favorite" : ""}>
+                <button onClick={this.toggleFavorite} className={this.state.favorite ? "active" : ""}>
                     <i className="fa fa-heart"></i>
                 </button>
             </div>
