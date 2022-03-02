@@ -1,10 +1,9 @@
 import { Component } from 'react';
 import actions from './redux/actions';
 import './App.css';
-import Grid from './components/grid/grid';
-import SearchBar from './components/searchBar/searchBar';
 import store from './redux/store';
 import {connect} from 'react-redux';
+import { Outlet } from 'react-router-dom';
 
 class App extends Component{
 
@@ -18,18 +17,12 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <h1>Cocktail Library</h1>
-        <hr/>
-        <SearchBar></SearchBar>
-        <Grid drinks={this.props.drinks}></Grid>
+        <header>
+          <h1>Cocktail Library</h1>
+        </header>
+        <Outlet />
       </div>
     );
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    drinks: state.drinks
   }
 }
 
@@ -39,4 +32,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

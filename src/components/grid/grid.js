@@ -4,15 +4,11 @@ import './grid.css';
 
 export default class Grid extends Component {
 
-    constructor(props){
-        super(props);
-    }
-
     render() {
         return (
             <div className="grid">
                 {(this.props.drinks.length > 0) ? (
-                    this.props.drinks.map(drink => <Cocktail title={drink.strDrink} img={drink.strDrinkThumb}></Cocktail>)
+                    this.props.drinks.map(drink => <Cocktail title={drink.strDrink} id={drink.idDrink} img={drink.strDrinkThumb} drink={drink} key={drink.idDrink}></Cocktail>)
                 ) : 
                 (
                     <p>No cocktails could be found</p>

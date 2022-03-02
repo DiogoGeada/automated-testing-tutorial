@@ -9,6 +9,13 @@ const fetchDrinkMiddleware = store => next => action => {
         }).catch(e => {
             store.dispatch(actions.saveDrinks());
         });
+    } else if(action.type === ACTIONS.SELECT_DRINK) {
+        CocktailService.getDrink(action.drink).then(drink => {
+            let tmp = drink;
+            
+            action.drink = drink;
+            next(action);
+        });
     }
         next(action);
 }

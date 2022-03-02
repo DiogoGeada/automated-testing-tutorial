@@ -5,9 +5,14 @@
     border-radius: 10px 10px 0 0;
 }
 
-.drink h3{
+.drink a {
+    text-decoration: none;
+}
+
+.drink a h3{
     padding: 0 10px;
     text-align: center;
+    color: black;
 }
 
 .drink img{

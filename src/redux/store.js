@@ -3,7 +3,8 @@ import fetchDrinkMiddleware from "./middleware";
 import drinksReducer from "./reducers"
 
 export const initialState = {
-    drinks: []
+    drinks: [],
+    drink: {}
 }
 
 const middleware = applyMiddleware(fetchDrinkMiddleware); 

@@ -3,11 +3,15 @@ import { initialState } from "./store";
 
 const drinksReducer = (state = initialState, action) => {
     if(action.type === ACTIONS.SAVE_DRINKS) {
-        debugger;
         return {
             ...state, 
             drinks: action.drinks
         };
+    } else if(action.type === ACTIONS.SELECT_DRINK){
+        return {
+            ...state,
+            drink: action.drink
+        }
     }
 
     return state;

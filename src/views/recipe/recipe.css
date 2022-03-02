@@ -1,0 +1,19 @@
+.content{
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    padding: 15px;
+    box-sizing: content-box;
+    grid-gap: 15px;
+    align-items: flex-start;
+    max-width: 60%;
+    margin: auto;
+}
+
+.content img {
+    max-width: 100%;
+    display: block;
+}
+
+.content-area{
+    position: relative;
+}
