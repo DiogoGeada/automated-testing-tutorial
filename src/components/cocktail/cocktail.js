@@ -17,7 +17,7 @@ class Cocktail extends Component {
         <Favorite></Favorite>
         <Link to={"/recipe/"+this.props.id}>
           <img src={this.props.img} alt=""/>
-          <h3 className="title" >{this.props.title}</h3>
+          <h3 className="title" >{this.props.title.substring(0, 20)}</h3>
         </Link>
       </div>
     );
