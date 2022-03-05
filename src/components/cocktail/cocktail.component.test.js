@@ -3,13 +3,13 @@ import { Provider } from "react-redux"
 import store from "../../redux/store"
 import Cocktail from "./cocktail"
 import drinks from "../data/drinks.json";
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { BrowserRouter } from "react-router-dom";
 
 describe("Cocktail component", () => {
 
 it("Renders properly", () => {
-    const cocktail = render(
+    render(
     <Provider store={store}>
         <BrowserRouter location={{pathname: "/"}}>
             <Cocktail 
@@ -20,7 +20,7 @@ it("Renders properly", () => {
         </BrowserRouter>
     </Provider>);
     
-    const title = cocktail.getByRole("heading");
+    const title = screen.getByRole("heading");
 
     expect(title).toHaveTextContent(drinks.drinks[0].strDrink);
 });
@@ -30,7 +30,7 @@ it("Limits title length", () => {
     let drink = {...drinks.drinks[0]};
     drink.strDrink = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     
-    const cocktail = render(
+    render(
     <Provider store={store}>
         <BrowserRouter location={{pathname: "/"}}>
             <Cocktail 
@@ -41,7 +41,7 @@ it("Limits title length", () => {
         </BrowserRouter>
     </Provider>);
     
-    const title = cocktail.getByRole("heading", {level: 3});
+    const title = screen.getByRole("heading", {level: 3});
 
     expect(title.textContent.length).toBeLessThanOrEqual(20);
 });
