@@ -1,13 +1,9 @@
 import {createStore, applyMiddleware} from "redux";
 import fetchDrinkMiddleware from "./middleware";
 import drinksReducer from "./reducers"
-
-export const initialState = {
-    drinks: [],
-    drink: {}
-}
+import initialState from './state'
 
 const middleware = applyMiddleware(fetchDrinkMiddleware); 
-const store = createStore(drinksReducer, initialState, middleware);
+const store = createStore(drinksReducer, {...initialState}, middleware);
 
 export default store;

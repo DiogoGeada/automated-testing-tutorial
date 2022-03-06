@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import Grid from '../../components/grid/grid';
 import SearchBar from '../../components/searchBar/searchBar';
 import './home.css';
+import actions from "../../redux/actions";
 
 class Home extends Component {
 
     constructor(props){
         super(props);
+        this.props.getDrinks();
     }
 
     render() {
@@ -27,5 +29,11 @@ const mapStateToProps = state => {
     }
   }
 
+const mapDispatchToProps = dispatch => {
+    return  {
+      getDrinks: (drink) => dispatch(actions.getDrinks(drink))
+    }
+}
+
   
-export default connect(mapStateToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

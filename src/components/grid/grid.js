@@ -11,7 +11,7 @@ export default class Grid extends Component {
                     this.props.drinks.map(drink => <Cocktail title={drink.strDrink} id={drink.idDrink} img={drink.strDrinkThumb} drink={drink} key={drink.idDrink}></Cocktail>)
                 ) : 
                 (
-                    <p>No cocktails could be found</p>
+                    <p>Loading...</p>
                 )}
             </div>
         );

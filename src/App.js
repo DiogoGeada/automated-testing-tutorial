@@ -1,17 +1,11 @@
 import { Component } from 'react';
-import actions from './redux/actions';
 import './App.css';
-import store from './redux/store';
-import {connect} from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
-class App extends Component{
+export default class App extends Component{
 
   constructor(props){
     super(props);
-
-    store.subscribe(() => { store.getState(); });
-    this.props.getDrinks();
   }
 
   render(){
@@ -25,11 +19,3 @@ class App extends Component{
     );
   }
 }
-
-const mapDispatchToProps = dispatch => {
-  return  {
-    getDrinks: (drink) => dispatch(actions.getDrinks(drink))
-  }
-}
-
-export default connect(null, mapDispatchToProps)(App);
