@@ -1,5 +1,5 @@
 import { ACTIONS } from "./actions";
-import { initialState } from "./state";
+import initialState from "./state";
 
 const drinksReducer = (state = initialState, action) => {
     if(action.type === ACTIONS.SAVE_DRINKS) {

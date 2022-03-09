@@ -10,23 +10,29 @@ class SearchBar extends Component{
         this.state = {
             keywords: ""
         }
+        this.search = this.search.bind(this);
     }
 
     render(){
         return(
             <div className="search" >
-                <input type="text" placeholder="Search for a cocktail..." value={this.state.keywords} 
+                <input type="text" aria-label="searchbar" placeholder="Search for a cocktail..." value={this.state.keywords} 
                 onChange={e => this.setState({"keywords": e.target.value})}
                 onKeyPress={e => {
                     if(e.key == "Enter") 
                         this.props.search(this.state.keywords)
                     }}
                 />
-                <button onClick={() => this.search(this.state.keywords)}>
+                <button onClick={this.search} aria-label="search">
                     <i className="fa fa-search"></i>
                 </button>
         </div>
         );
+    }
+
+    search = (e) => {
+        e.preventDefault();
+        this.props.search(this.state.keywords);
     }
 }
 
